@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../static/login.css">
+</head>
+<body>
+  <form class="box" action="login" method="POST">
+    <h2> Account Login </h2>
+    <div data-validate="Username is required">
+      <input type="text" name="username" required placeholder="Codeforces Username" />
+    </div>
+    <input type="submit" value="Enter"><br>
+  </form>
+  {% if give_error %}
+  <script>alert("Username Doesn't Exist");</script>
+  {% endif %}
+  {% if usererror %}
+  <script>alert("It seems that you haven't participated in a rated contest yet.\nI recommend problems to users based on past performance\nso please do come back after giving a rated contest...  :)");</script>
+ {% endif %}
+</body>
+</html>
